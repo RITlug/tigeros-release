@@ -58,7 +58,7 @@ echo >> %{buildroot}/etc/issue
 ln -s fedora-release %{buildroot}/etc/redhat-release
 ln -s fedora-release %{buildroot}/etc/system-release
 
-mkdir -p %{buildroot}/usr/lib/systemd/system-preset/
+%{__mkdir_p} %{buildroot}/usr/lib/systemd/system-preset/
 
 cat << EOF >>%{buildroot}/usr/lib/os-release
 NAME=TigerOS
@@ -111,6 +111,7 @@ install -m 0644 99-default-disable.preset %{buildroot}%{_prefix}/lib/systemd/sys
 %changelog
 * Wed May 16 2018 Tim Zabel <tjz8659@rit.edu> - 28-1.0
 - rebuild for Fedora 28
+- remove deprecated macros
 
 * Thu Dec 14 2017 Christian Martin <ctmartin@mail.rit.edu> - 27-1.0
 - rebuild for Fedora 27
