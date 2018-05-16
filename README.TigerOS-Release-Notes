@@ -1,6 +1,5 @@
 README.Generic-Release-Notes
 =============================
 
-This is a placeholder. There are no useful release notes in here.
-
-Sorry bout that.
+TigerOS is now using Fedora 28! Changes include gnome-shell 3.28, and updated
+RPM packages.

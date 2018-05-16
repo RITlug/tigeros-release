@@ -1,12 +1,13 @@
 %global release_name TigerOS
-%global dist_version 27
+%global dist_version 28
 
-Summary:        TigerOS release files
 Name:           tigeros-release
 Version:        %{dist_version}
 Release:        1.0
+Summary:        TigerOS release files
+
 License:        MIT
-Group:          System Environment/Base
+URL:            https://Github.com/RITlug/TigerOS
 Source0:        LICENSE
 Source1:        README.developers
 Source2:        README.TigerOS-Release-Notes
@@ -14,6 +15,7 @@ Source3:        README.license
 Source4:        85-display-manager.preset
 Source5:        90-default.preset
 Source6:        99-default-disable.preset
+
 Obsoletes:      redhat-release
 Provides:       redhat-release
 Provides:       system-release
@@ -31,7 +33,6 @@ trademark restrictions on that release package.
 %package notes
 Summary:    Release Notes
 License:    Open Publication
-Group:      System Environment/Base
 Provides:   system-release-notes = %{version}-%{release}
 Conflicts:  fedora-release-notes
 
@@ -45,8 +46,6 @@ package. Please note that there is no actual useful content here.
 %prep
 %setup -c -T
 cp -a %{SOURCE0} %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} %{SOURCE5} %{SOURCE6} .
-
-%build
 
 %install
 install -d %{buildroot}/etc
@@ -89,9 +88,6 @@ install -m 0644 85-display-manager.preset %{buildroot}%{_prefix}/lib/systemd/sys
 install -m 0644 90-default.preset %{buildroot}%{_prefix}/lib/systemd/system-preset/
 install -m 0644 99-default-disable.preset %{buildroot}%{_prefix}/lib/systemd/system-preset/
 
-%clean
-rm -rf %{buildroot}
-
 %files
 %defattr(-,root,root,-)
 %license LICENSE README.license
@@ -113,6 +109,9 @@ rm -rf %{buildroot}
 %doc README.TigerOS-Release-Notes
 
 %changelog
+* Wed May 16 2018 Tim Zabel <tjz8659@rit.edu> - 28-1.0
+- rebuild for Fedora 28
+
 * Thu Dec 14 2017 Christian Martin <ctmartin@mail.rit.edu> - 27-1.0
 - rebuild for Fedora 27
 
