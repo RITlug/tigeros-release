@@ -1,5 +1,5 @@
 %global release_name TigerOS
-%global dist_version 28
+%global dist_version 29
 
 Name:           tigeros-release
 Version:        %{dist_version}
@@ -109,6 +109,10 @@ install -m 0644 99-default-disable.preset %{buildroot}%{_prefix}/lib/systemd/sys
 %doc README.TigerOS-Release-Notes
 
 %changelog
+* Tue Oct 30 2018 Tim Zabel <tjz8659@rit.edu> - 29-1.0
+- Fedora 29 build
+- updated directory structure and release notes
+
 * Wed May 16 2018 Tim Zabel <tjz8659@rit.edu> - 28-1.0
 - rebuild for Fedora 28
 - remove deprecated macros
